@@ -31,8 +31,8 @@ router.get("/store/:name", async (req, res) => {
 
     try {
         let name=req.params.name;
-        const getsingalItem = await store.find({"name":name});
-        console.log(req.body);
+        const getsingalItem = await store.findOne({name:name});
+        // console.log(req.body);
         res.send(getsingalItem);
         
     } catch (e) {
